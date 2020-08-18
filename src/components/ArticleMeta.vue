@@ -41,6 +41,58 @@ import { FAVORITE_ADD, FAVORITE_REMOVE } from "@/store/actions.type";
 
 export default {
   name: "RwvArticleMeta",
+  metaInfo() {
+    return {
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          name: "title",
+          content: `${this.article.title ? this.article.title : ""}`
+        },
+        {
+          name: "description",
+          content: `We are Serving from Rendertron - ${
+            this.article.body ? this.article.body : ""
+          }`
+        },
+
+        { name: "og:type", content: `website` },
+        // { name: 'og:url', content: `We are Serving from Rendertron - ${this.article.body ? this.article.body : '' }` },
+        {
+          name: "og:title",
+          content: `${this.article.title ? this.article.title : ""}`
+        },
+        {
+          name: "og:description",
+          content: `We are Serving from Rendertron - ${
+            this.article.body ? this.article.body : ""
+          }`
+        },
+        {
+          name: "og:image",
+          content: `https://cdn2.wpbeginner.com/wp-content/uploads/2019/01/choosethebestbloggingplatform.png`
+        },
+
+        { name: "twitter:card", content: `summary_large_image` },
+        // { name: 'twitter:url', content: `We are Serving from Rendertron - ${this.article.body ? this.article.body : '' }` },
+        {
+          name: "twitter:title",
+          content: `${this.article.title ? this.article.title : ""}`
+        },
+        {
+          name: "twitter:description",
+          content: `We are Serving from Rendertron - ${
+            this.article.body ? this.article.body : ""
+          }`
+        },
+        {
+          name: "twitter:image",
+          content: `https://cdn2.wpbeginner.com/wp-content/uploads/2019/01/choosethebestbloggingplatform.png`
+        }
+      ]
+    };
+  },
   components: {
     RwvArticleActions
   },
